@@ -18,59 +18,81 @@
 
 <body>
   <header>
-    <nav class=" desktop-view-navigation max-width nav-font-style">
+    <nav class=" desktop-view-navigation max-width ">
       <ul>
-        <li><a href="#" tabindex="0">First Link</a></li>
-        <li><a href="#">Second Link</a></li>
-        <li><a href="#">Third Link</a></li>
-        <li>
-          <div>
-            <a href="./index.html">
-              <div class="logo-wrapper"><img src="./assets/images/svg/logo.svg" alt="logo" /></div>
-            </a>
-          </div>
+        <li class="nav-font-style"><a href="#" tabindex="0">First Link</a></li>
+        <li class="nav-font-style"><a href="#">Second Link</a></li>
+        <li class="nav-font-style"><a href="#">Third Link</a></li>
+        <div>
+          <a href="./index.html">
+            <div class="logo-wrapper"><img src="./assets/images/svg/logo.svg" alt="logo" /></div>
+          </a>
+        </div>
         </li>
-        <li><a href="#">Forth Link</a></li>
-        <li><a href="#">Fifth Link</a></li>
-        <li><a href="#">Sixth Link</a></li>
+        <li class="nav-font-style"><a href="#">Forth Link</a></li>
+        <li class="nav-font-style"><a href="#">Fifth Link</a></li>
+        <li class="nav-font-style"><a href="#">Sixth Link</a></li>
       </ul>
     </nav>
     <div class="mobile-view-navigation">
       <nav>
+
         <ul class="nav-font-style">
-          <li><a href="#"><i class="fas fa-bars"></i></li></a>
-          <li>
-            <a href="">
-              <div class="logo-wrapper"><img src="./assets/images/svg/logo.svg" alt="logo" /></div>
-            </a>
-          </li>
-          <li><a href="#"><i class="fas fa-search"></i></li></a>
+          <div class="hamburger" id="burger" onclick="burger()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="hamburger-navigation" id="burgerNav">
+
+            <li class="hamburger-link"><a href="#">First Link</a></li>
+            <li class="hamburger-link"><a href="#">Second Link</a></li>
+            <li class="hamburger-link"><a href="#">Third Link</a></li>
+            <li class="hamburger-link"><a href="#">Fourth Link</a></li>
+            <li class="hamburger-link"><a href="#">Fifth Link</a></li>
+            <li class="hamburger-link"><a href="#">Sixth Link</a></li>
+          </div>
+
+
+          <div>
+            <li class="nav-font-style">
+              <a href="">
+                <div class="logo-wrapper"><img src="./assets/images/svg/logo.svg" alt="logo" /></div>
+              </a>
+            </li>
+          </div>
+
+          <div>
+            <li class="nav-font-style"><a href="#"><i class="fas fa-search"></i></li></a>
+          </div>
+
         </ul>
+
       </nav>
     </div>
   </header>
 
   <main>
+    <div class="popup" id="popup">
+      <span id="fetchname"></span>
+      <span id="fetchemail"></span>
+      <p>SUBSCRIBED</p>
+      <button type="button" onclick="closepopup()">ok</button>
+    </div>
 
-    <section class="header-content  max-width">
+    <section class="  max-width" id="heading">
       <div class="heading">
         <h1 class="header-font-style">Heading</h1>
-        <p class="heading-normal-content heading-font-style">
-          Let’s talk a little about what symptoms a slow
-          computer can have.
-        </p>
-        <p class="mobile-view-heading heading-font-style">
-          Poster can be one of the effective marketing and advertising materials.
-          It is also a great tool to use when you want to present your.
-        </p>
-        <input type="text" placeholder="Name" autofocus required />
-        <input type="email" placeholder="Email" required /> <br>
-        <button class="primary-button"><a href="#">Subscribe</a></button>
-        <p class="dull-heading-font-style dull-font">
-          No spam, notifications only about new products,
-          updates and freebies.
-        </p>
+
+        <p class="mobile-view-heading heading-font-style"></p>
+        <input type="text" placeholder="Name" autofocus required id="contact-name" onkeyup="validateName()"/><span id="name-error"></span><br>
+        <input type="email" placeholder="Email" id="contact-email"
+        required onkeyup="validateEmail()" /> <br>
+        <button type="submit" onclick="submitted()" class="primary-button buttonsubmit"><a href="#">Subscribe</a></button>
+        <p class="dull-heading-font-style dull-font"></p>
       </div>
+
       <div class="screen-image">
         <img src="./assets/images/svg/Vectorscreen.svg" alt="screenimage" />
       </div>
@@ -78,29 +100,21 @@
 
 
     <section class="max-width">
-      <section class="about-content padding">
+      <section class="about-content padding" id="about">
         <div class="about">
           <img src="./assets/images/svg/star_bg.svg" alt="starimage" />
           <div class="desktop-about-pragraph padding">
-            <p class="about-font-style">
-              Over 92% of computers are infected with Adware and spyware. Such software is
-              rarely accompanied by uninstall utility and even when it is it
-              almost always leaves broken Windows Registry keys behind it. Even if you have an
-              anti-spyware tool your Windows Registry might be broken.
-            </p>
+            <p class="about-font-style"></p>
           </div>
           <div class="mobile-view-about-pragraph">
-            <p class="about-font-style">
-              Such software is rarely accompanied by uninstall utility
-              and even when it is it almost always leaves broken Windows Registry keys behind it.
-              Even if you have an anti-spyware tool your Windows Registry might be broken.</p>
+            <p class="about-font-style"></p>
           </div>
         </div>
       </section>
 
 
 
-      <section class="one-line-container padding">
+      <section class="padding" id="features">
         <div>
           <div class="one-line-content-top">
             <div class="one-line-content">
@@ -108,14 +122,10 @@
               <h2>One line header</h2>
             </div>
             <div class="desktop-view-one-line-paragraph">
-              <p>
-                Computers are infected with Adware and spyware. Such
-                software is rarely accompanied by uninstall utility.
-              </p>
+              <p></p>
             </div>
             <div class="mobile-view-one-line-paragraph">
-              <p>Each and every one of us has that moment when we are
-                suddenly stunned when we come face.</p>
+              <p></p>
             </div>
           </div>
           <div class="one-line-content-top">
@@ -124,14 +134,10 @@
               <h2>One line header</h2>
             </div>
             <div class="desktop-view-one-line-paragraph">
-              <p>
-                Computers are infected with Adware and spyware. Such
-                software is rarely accompanied by uninstall utility.
-              </p>
+              <p></p>
             </div>
             <div class="mobile-view-one-line-paragraph">
-              <p>Each and every one of us has that moment when we are
-                suddenly stunned when we come face.</p>
+              <p></p>
             </div>
           </div>
           <div class="one-line-content-top">
@@ -140,14 +146,10 @@
               <h2>One line header</h2>
             </div>
             <div class="desktop-view-one-line-paragraph">
-              <p>
-                Computers are infected with Adware and spyware. Such
-                software is rarely accompanied by uninstall utility.
-              </p>
+              <p></p>
             </div>
             <div class="mobile-view-one-line-paragraph">
-              <p>Each and every one of us has that moment when we are
-                suddenly stunned when we come face.</p>
+              <p></p>
             </div>
           </div>
         </div>
@@ -159,7 +161,7 @@
 
 
 
-      <section class="chart-container padding">
+      <section class="padding" id="piechart">
         <div class="big-chart">
           <img src="./assets/images/svg/Bigchart.svg" alt="piechart" />
         </div>
@@ -171,7 +173,7 @@
             </div>
             <div class="dot-precentage1">
               <div class="bold-data presentage-font-style">
-                <h1>28%</h1>
+                <h1></h1>
               </div>
               <div class="lightData">Downloads</div>
             </div>
@@ -183,7 +185,7 @@
             </div>
             <div class="dot-precentage1">
               <div class="bold-data presentage-font-style">
-                <h1>22%</h1>
+                <h1></h1>
               </div>
               <div class="light-data">User</div>
             </div>
@@ -195,7 +197,7 @@
             </div>
             <div class="dot-precentage1">
               <div class="bold-data presentage-font-style">
-                <h1>37%</h1>
+                <h1></h1>
               </div>
               <div class="light-data">Subscribers</div>
             </div>
@@ -207,66 +209,49 @@
             </div>
             <div class="dot-precentage1">
               <div class="bold-data presentage-font-style">
-                <h1>13%</h1>
+                <h1></h1>
               </div>
               <div class="light-data">Products</div>
             </div>
           </div>
-
-
         </div>
 
         <div class="dot-content chart-font-style">
-          <p>
-            The quality of today’s video game was not at all
-            there when video game first conceptualized and
-            played ever. During the formulative years, video
-            games were created by using various interactive
-            electronic devices with various display.
-          </p>
-
-          <p class="dull-font ">
-            Video games were created by using various interactive
-            electronic devices with various display.
-          </p>
+          <p></p>
+          <p class="dull-font "></p>
         </div>
       </section>
 
 
 
-      <section class="short-heading padding">
+      <section class="short-heading padding" id="short">
         <div class="short-heading-container">
           <div class="desktop-view-short-paragraph">
             <h1 class="header-font-style">Short heading</h1>
             <div class="short-heading-paragraph ">
-              <p class="short-heading-font-style">
-                Each and every one of us has that moment when we are suddenly stunned when we come face to face with the
-                enormity of the universe.
-              </p>
+              <p class="short-heading-font-style"></p>
             </div>
           </div>
           <div class="mobile-view-short-paragraph">
             <h1 class="header-font-style">Heading</h1>
-            <p class="short-heading-font-style">
-              Poster can be one of the effective marketing and advertising materials.
-            </p>
+            <p class="short-heading-font-style"></p>
           </div>
           <div class="short-heading-icons ">
             <div class="star-image">
               <div><img src="./assets/images/svg/small_circle.svg" alt="starimage" /></div>
-              <p>Feature One</p>
+              <p></p>
             </div>
             <div>
               <div class="star-image"><img src="./assets/images/svg/small_circle.svg" alt="starimage" /></div>
-              <p>Feature Two</p>
+              <p></p>
             </div>
             <div>
               <div class="star-image"><img src="./assets/images/svg/small_circle.svg" alt="starimage" /></div>
-              <p>Feature Three</p>
+              <p></p>
             </div>
             <div>
               <div class="star-image"><img src="./assets/images/svg/small_circle.svg" alt="starimage" /></div>
-              <p>Feature Four</p>
+              <p></p>
             </div>
           </div>
 
@@ -376,13 +361,10 @@
         </div>
       </section>
 
-      <section class="gmail-button padding">
+      <section class="" id="gmail">
         <div>
           <h2>Heading</h2>
-          <p class="gmail-button-font-style">
-            In the history of modern astronomy, there is probably no one
-            greater leap forward than the building and launch.
-          </p>
+          <p class="gmail-button-font-style"></p>
         </div>
 
         <div class="gmail-and-button">
@@ -414,6 +396,7 @@
           </p>
         </div>
       </div>
+
       <div class="social-media">
         <a href="#">
           <div class="footericons"><img src="./assets/images/svg/Facebook.svg" alt="facebook-icon" /></div>
@@ -425,12 +408,13 @@
           <div class="footericons"><img src="./assets/images/svg/twiter.svg" alt="twiter-icon" /></div>
         </a>
         <a href="#">
-          <div class="footericons"><img src="./assets/images/svg/youtube.svg" alt="youtube-icon" />
+          <div class="footericons"><img src="./assets/images/svg/youtube.svg" alt="youtube-icon" /></div>
         </a>
-      </div>
       </div>
     </section>
 
   </footer>
+  <script src="./index.js"></script>
 </body>
+
 </html>

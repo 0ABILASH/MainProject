@@ -40,13 +40,14 @@ footer a:hover {
 
 /* ----------------------------(Class)---------------------------- */
 
-.max-width{
+.max-width {
   margin: 0 auto;
   max-width: 1440px;
 }
-.padding{
+
+/* .padding {
   padding: 0 10%;
-}
+} */
 
 .dull-font {
   color: var(--dull_font_color);
@@ -128,12 +129,55 @@ input {
   width: 45px;
   height: 45px;
 }
-.logo-wrapper{
+
+.logo-wrapper {
   width: 38px;
   height: 38px;
 }
-.logo-wrapper img{
+
+.logo-wrapper img {
   width: 100%;
+}
+
+.popup {
+  background-color: #fff;
+  min-width: 50rem;
+  border-radius: 20px;
+  text-align: center;
+  margin: 0 auto;
+  position: absolute;
+  left: 30%;
+  top: 0;
+  transform: translate(-50%, -50%) scaleX(0.1);
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+  box-shadow: .1rem .1rem 1rem #ccc,
+      -.1rem -.1rem .1rem #fff;
+  padding: 10px;
+}
+
+.open-popup {
+  transform: translate(-10%, -50%) scaleX(1);
+  visibility: visible;
+  top: 50%;
+}
+
+.popup img {
+  height: 10rem;
+  width: 10rem;
+}
+
+.blur {
+  filter: blur(25px);
+}
+
+.popup button {
+  width: 10rem;
+  height: 2rem;
+  margin: 10px;
+  border-radius: 40px;
+  background-color:var(--button-color);
+  color: white;
 }
 
 /* ---------------------------(Header)---------------------------- */
@@ -144,29 +188,34 @@ nav ul {
   align-items: center;
   width: 90%;
   padding: 20px 10%;
-  margin: 0 auto ;
+  margin: 0 auto;
 }
 
 /* ------------------------(Heading-&-Buttons)-------------------- */
+#heading{
+  border-bottom: 1px solid var(--border-color);
+}
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 5px;
-  padding: 84px 0 0 10%;
-  border-bottom: 1px solid var(--border-color);
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 84px 0 0 0;
+  
 }
 
 .header-content p {
   font-weight: 400;
   font-size: 1.25rem;
   line-height: 30px;
-  width: 70%;
+  width: 100%;
   color: var(--secondary-font-color);
 }
 
 .heading {
   line-height: 4rem;
+  padding: 0px 0 0 5%;
 }
 
 .heading p {
@@ -179,11 +228,14 @@ nav ul {
 }
 
 /* ----------------------------(About)---------------------------- */
+#about{
+  border-bottom: 1px solid var(--border-color);
+}
 
 .about-content {
   align-items: center;
   padding: 110px 0;
-  border-bottom: 1px solid var(--border-color);
+  
 }
 
 .about {
@@ -199,6 +251,9 @@ nav ul {
 }
 
 /* --------------------------(One-Line)--------------------------- */
+#features{
+  border-bottom: 1px solid var(--border-color);
+}
 .one-line-content {
   display: flex;
   line-height: 22px;
@@ -219,23 +274,26 @@ nav ul {
   gap: 20px;
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  border-bottom: 1px solid var(--border-color);
 }
-.second-screen-image img{
+
+.second-screen-image img {
   max-width: 100%;
 }
 
 /* ------------------------(Pie-Chart)---------------------------- */
-
+#piechart{
+  border-bottom: 1px solid var(--border-color);
+}
 .chart-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   padding: 110px 145px;
-  border-bottom: 1px solid var(--border-color);
+  
 }
 
 .dot-content p:first-child {
@@ -279,7 +337,8 @@ nav ul {
   align-items: center;
   justify-content: center;
 }
-.short-heading-paragraph{
+
+.short-heading-paragraph {
   width: 60%;
 }
 
@@ -294,7 +353,7 @@ nav ul {
   display: block;
 }
 
-.star-image img{
+.star-image img {
   width: 64px;
 }
 
@@ -375,7 +434,10 @@ nav ul {
   flex-direction: column;
   cursor: pointer;
 }
-.paid-subscription p,h1,h4{
+
+.paid-subscription p,
+h1,
+h4 {
   line-height: 45px;
 }
 
@@ -478,19 +540,24 @@ nav ul {
 .copyright {
   text-align: center;
 }
-.footericons{
+
+.footericons {
   width: 20px;
+  margin-top: 20px;
 }
-.footericons img{
+
+.footericons img {
   width: 100%;
 }
 
+
 /* -------------------------(Font-Styles)------------------- */
-.nav-font-style{
+.nav-font-style {
   font-weight: 600;
   font-size: 15px;
   line-height: 22px;
 }
+
 .header-font-style {
   font-weight: 700;
   font-size: 3rem;
@@ -514,7 +581,7 @@ nav ul {
   line-height: 30px;
   color: var(--secondary-font-color);
   margin: 0%;
-  }
+}
 
 .dull-heading-font-style {
   font-weight: 400;
@@ -559,6 +626,65 @@ nav ul {
   font-size: 0.93rem;
   line-height: 22px
 }
+/* --------------------------------------------------------- */
+.hamburger-navigation{
+  width: 100%;
+  background-color:var(--button-color);
+  border-bottom-right-radius: 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  position: absolute;
+  right: 80rem;
+  box-shadow: .1rem .1rem 1rem #ccc,
+  -.1rem -.1rem .1rem #fff;
+}
+.hamburger-link{
+  line-height: 90px;
+}
+.hamburger {
+  display: flex;
+  flex-direction: column;
+}
+.hamburger span{
+  width: 30px;
+  height: 3px;
+  background-color: #1c1c1c;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+}
+.hamburger span:nth-child(1){
+  transform: translateY(-9px);
+   transition: .5s;
+}
+.hamburger span:nth-child(3){
+  transform: translateY(9px);
+  transition: .5s;
+}
+.hamburger.active span:nth-child(1){
+  transform: rotate(45deg);
+  transition: .5s;
+}
+.hamburger.active span:nth-child(2){
+  transform: translateY(-10px);
+  background-color: transparent;
+  transition: .1s;
+}
+.hamburger.active span:nth-child(3){
+  transform: rotate(-45deg);
+  transition: .5s;
+}
+.display-property{
+  left: 0rem;
+  transition: .5s;
+}
+.hamburger-navigation{
+  top:12vh;
+  right: 80rem;
+  transition: .5s;
+}
 
 /* ----------------(-Media-Query-(Responsive))-------------- */
 
@@ -567,7 +693,7 @@ nav ul {
 .mobile-view-slides,
 .mobile-view-about-pragraph,
 .mobile-view-one-line-paragraph,
-.mobile-view-short-paragraph {
+.mobile-view-short-paragraph{
   display: none;
 }
 
@@ -581,10 +707,11 @@ nav ul {
 
 /* -----------------(--MobileView-(640px)--)---------------- */
 
-@media (max-width: 640px) {
-  .padding{
+@media (max-width: 780px) {
+  .padding {
     padding: 40px 15px;
   }
+
   input {
     max-width: 290px;
     max-height: 48px;
@@ -638,9 +765,10 @@ nav ul {
   .header-content {
     display: flex;
     flex-direction: column-reverse;
-    padding: 15px 0 0 10px;
+    padding: 15px 0 0 0px; 
   }
-  .header-content p{
+
+  .header-content p {
     width: 100%;
   }
 
@@ -670,5 +798,8 @@ nav ul {
   .footer-links {
     display: flex;
     flex-wrap: wrap;
+  }
+  .popup{
+    min-width: 10rem;
   }
 }
