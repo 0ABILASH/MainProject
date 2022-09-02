@@ -62,7 +62,7 @@ footer a:hover {
 }
 
 .border-bottom {
-  border-bottom: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dfacac;
 }
 
 nav ul a {
@@ -72,7 +72,7 @@ nav ul a {
 input {
   border: 1px solid #dbdbdb;
   border-radius: 6px;
-  width: 448px;
+  max-width: 448px;
   height: 48px;
   font-weight: 400;
   font-size: 1.25rem;
@@ -140,6 +140,9 @@ input {
 }
 
 .popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #fff;
   min-width: 50rem;
   border-radius: 20px;
@@ -153,7 +156,8 @@ input {
   transition: transform 0.4s, top 0.4s;
   box-shadow: .1rem .1rem 1rem #ccc,
       -.1rem -.1rem .1rem #fff;
-  padding: 10px;
+  padding: 30px;
+  line-height: 20px;
 }
 
 .open-popup {
@@ -199,7 +203,7 @@ nav ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: 30px;
   padding: 84px 0 0 0;
   
@@ -275,7 +279,7 @@ nav ul {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   align-items: center;
 }
 
@@ -452,24 +456,21 @@ h4 {
   border: 1px solid var(--button-color);
 }
 
-.free-subscription:hover button,
-.paid-subscription:hover button {
+.free-subscription button:hover,
+.paid-subscription button:hover  {
   background-color: var(--button-color);
   border: 0;
-}
-
-.free-subscription:hover a,
-.paid-subscription:hover a {
   color: #fff;
 }
 
-.paid-subscription:hover .highlights {
-  display: flex;
+.free-subscription a:hover,
+.paid-subscription a:hover{
+  color: #fff;
 }
 
-.border-pro {
-  border: 2px solid var(--button-color);
-}
+/* .paid-subscription:hover .highlights {
+  display: flex;
+} */
 
 .pop-up {
   height: 50px;
@@ -485,7 +486,7 @@ h4 {
   font-size: 0.81rem;
   margin: 0 0 0px auto;
   color: #fff;
-  display: none;
+  /* display: none; */
 }
 
 /* --------------------(Gmail-&-Button)---------------------- */
@@ -629,6 +630,7 @@ h4 {
 /* --------------------------------------------------------- */
 .hamburger-navigation{
   width: 100%;
+  height: 100vh;
   background-color:var(--button-color);
   border-bottom-right-radius: 55px;
   display: flex;
@@ -681,7 +683,7 @@ h4 {
   transition: .5s;
 }
 .hamburger-navigation{
-  top:12vh;
+  top:10vh;
   right: 80rem;
   transition: .5s;
 }
@@ -789,6 +791,11 @@ h4 {
   .paid-subscription {
     min-width: 250px;
   }
+  .gmail-button{
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+  }
   .footer-content {
     display: flex;
     flex-direction: column;
@@ -800,6 +807,7 @@ h4 {
     flex-wrap: wrap;
   }
   .popup{
-    min-width: 10rem;
+    min-width: 15rem;
+    left: 20%;
   }
 }

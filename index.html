@@ -10,28 +10,28 @@
   <meta name="author" content="Abilash" />
   <meta name="keycords" content="figma,UI,Design" />
   <link rel="stylesheet" href="./style/fontstyles.css">
-  <link rel="stylesheet" href="./style/styles.css" />
+  <link rel="stylesheet" href="style/styles.css" />
   <script src="https://kit.fontawesome.com/5199079283.js" crossorigin="anonymous"></script>
   <link rel="shortcut icon" href="./assets/images/shortcuticon.png">
-  <title>#SCREEN 3</title>
+  <title>SCREEN 3</title>
 </head>
 
 <body>
   <header>
     <nav class=" desktop-view-navigation max-width ">
       <ul>
-        <li class="nav-font-style"><a href="#" tabindex="0">First Link</a></li>
-        <li class="nav-font-style"><a href="#">Second Link</a></li>
-        <li class="nav-font-style"><a href="#">Third Link</a></li>
+        <li class="nav-font-style"><a href="" tabindex="0">First Link</a></li>
+        <li class="nav-font-style"><a href="">Second Link</a></li>
+        <li class="nav-font-style"><a href="">Third Link</a></li>
         <div>
           <a href="./index.html">
             <div class="logo-wrapper"><img src="./assets/images/svg/logo.svg" alt="logo" /></div>
           </a>
         </div>
         </li>
-        <li class="nav-font-style"><a href="#">Forth Link</a></li>
-        <li class="nav-font-style"><a href="#">Fifth Link</a></li>
-        <li class="nav-font-style"><a href="#">Sixth Link</a></li>
+        <li class="nav-font-style"><a href="">Forth Link</a></li>
+        <li class="nav-font-style"><a href="">Fifth Link</a></li>
+        <li class="nav-font-style"><a href="">Sixth Link</a></li>
       </ul>
     </nav>
     <div class="mobile-view-navigation">
@@ -46,12 +46,12 @@
 
           <div class="hamburger-navigation" id="burgerNav">
 
-            <li class="hamburger-link"><a href="#">First Link</a></li>
-            <li class="hamburger-link"><a href="#">Second Link</a></li>
-            <li class="hamburger-link"><a href="#">Third Link</a></li>
-            <li class="hamburger-link"><a href="#">Fourth Link</a></li>
-            <li class="hamburger-link"><a href="#">Fifth Link</a></li>
-            <li class="hamburger-link"><a href="#">Sixth Link</a></li>
+            <li class="hamburger-link"><a href="">First Link</a></li>
+            <li class="hamburger-link"><a href="">Second Link</a></li>
+            <li class="hamburger-link"><a href="">Third Link</a></li>
+            <li class="hamburger-link"><a href="">Fourth Link</a></li>
+            <li class="hamburger-link"><a href="">Fifth Link</a></li>
+            <li class="hamburger-link"><a href="">Sixth Link</a></li>
           </div>
 
 
@@ -64,7 +64,7 @@
           </div>
 
           <div>
-            <li class="nav-font-style"><a href="#"><i class="fas fa-search"></i></li></a>
+            <li class="nav-font-style"><a href=""><i class="fas fa-search"></i></li></a>
           </div>
 
         </ul>
@@ -75,9 +75,11 @@
 
   <main>
     <div class="popup" id="popup">
-      <span id="fetchname"></span>
-      <span id="fetchemail"></span>
-      <p>SUBSCRIBED</p>
+      <span id="popuptext"></span>
+      <span id="outputname"></span>
+      <span id="outputemail"></span>
+      
+      <span id="notes" class="dull-font"></span>
       <button type="button" onclick="closepopup()">ok</button>
     </div>
 
@@ -86,10 +88,12 @@
         <h1 class="header-font-style">Heading</h1>
 
         <p class="mobile-view-heading heading-font-style"></p>
-        <input type="text" placeholder="Name" autofocus required id="contact-name" onkeyup="validateName()"/><span id="name-error"></span><br>
-        <input type="email" placeholder="Email" id="contact-email"
-        required onkeyup="validateEmail()" /> <br>
-        <button type="submit" onclick="submitted()" class="primary-button buttonsubmit"><a href="#">Subscribe</a></button>
+        <input type="text" placeholder="Name" autofocus required id="contact-name" onkeyup="validateName()" /><br>
+
+        <input type="email" placeholder="Email" id="contact-email" required onkeyup="validateEmail()" /> <br>
+
+        <button type="submit" onclick="submitted()" class="primary-button buttonsubmit"><a
+            href="">Subscribe</a></button>
         <p class="dull-heading-font-style dull-font"></p>
       </div>
 
@@ -100,7 +104,7 @@
 
 
     <section class="max-width">
-      <section class="about-content padding" id="about">
+      <section id="about">
         <div class="about">
           <img src="./assets/images/svg/star_bg.svg" alt="starimage" />
           <div class="desktop-about-pragraph padding">
@@ -268,21 +272,21 @@
           <img src="./assets/images/svg/🔹 Colorhifen.svg" alt="doublequote" />
         </div>
         <div class="left-right-content">
-          <button class="circle-button"><a href="#"><img src="./assets/images/svg/Iconlft-btn.svg"
+          <button class="circle-button" ><a href=""><img src="./assets/images/svg/Iconlft-btn.svg"
                 alt="leftbutton"></a></button>
           <p class="left-right-font-style secondary-dull-font">
-            There is a lot of exciting stuff going on in the stars above us that make astronomy so much fun. The truth
+            There is a lot of exciting stuff going on in the stars above us that make astronomy so much fun. The truthgit
             is the universe is a constantly changing, moving, some would say “living” thing because you just never know
             what you are going to see on any given night of stargazing.
           </p>
-          <button class="circle-button"><a href="#"><img src="./assets/images/svg/Iconrit-btn.svg"
+          <button class="circle-button"><a href=""><img src="./assets/images/svg/Iconrit-btn.svg"
                 alt="rightbutton"></a></button>
         </div>
         <div class="left-right-tags">
           <h1 class="google secondary-dull-font">Google</h1>
           <h3>Charlie Mendoza</h3>
           <p>Product Designer</p>
-          <span> <a href="#">Learn more</a></span>
+          <span> <a href="">Learn more</a></span>
         </div>
         <div class="mobile-view-slides">
           <div class="slide"></div>
@@ -299,7 +303,7 @@
           <p>Long Feature One</p>
           <p> Feature Two</p>
           <p>Long Feature Three</p>
-          <button class="secondary-button">
+          <button class="secondary-button" onclick="freeSubscription()">
             <div class="button-container">
               <a href="#">Button</a>
               <img src="./assets/images/svg/🔶 Iconbutton box.svg" alt="rectangle">
@@ -325,7 +329,7 @@
             <p> Feature Two</p>
             <p>Long Feature Three</p>
             <button class="secondary-button">
-              <div class="button-container">
+              <div class="button-container" onclick="prosubscription()">
                 <a href="#">Button</a>
                 <img src="./assets/images/svg/🔶 Iconbutton box.svg" alt="rectangle">
               </div>
@@ -346,7 +350,7 @@
           <p> Feature Two</p>
           <p>Long Feature Three</p>
 
-          <button class="secondary-button">
+          <button class="secondary-button" onclick="Bussinesssubscription()">
             <div class="button-container">
               <a href="#">Button</a>
               <img src="./assets/images/svg/🔶 Iconbutton box.svg" alt="rectangle">
@@ -361,17 +365,20 @@
         </div>
       </section>
 
-      <section class="" id="gmail">
+      <section class="gmail-buttonn" id="gmail">
         <div>
           <h2>Heading</h2>
           <p class="gmail-button-font-style"></p>
         </div>
 
         <div class="gmail-and-button">
-          <input type="email" placeholder="Gmail" />
-          <button class="primary-button"><a href="#">Subscribe</a></button>
+          <input type="email" placeholder="Gmail" id="contact-confirm-email" onkeyup="validateConfirmEmail()"/>
+        
+        <button type="submit" onclick="confirmEmail()" class="primary-button"><a
+          href="">Subscribe</a></button>
         </div>
       </section>
+
     </section>
   </main>
 
@@ -384,11 +391,11 @@
       </div>
       <div class="footer-links">
         <ul>
-          <li><a href="#">First Link</a></li>
-          <li><a href="#">Second Link</a></li>
-          <li><a href="#">Third Link</a></li>
-          <li><a href="#">Fourth Link</a></li>
-          <li><a href="#">Fifth Link</a></li>
+          <li><a href="">First Link</a></li>
+          <li><a href="">Second Link</a></li>
+          <li><a href="">Third Link</a></li>
+          <li><a href="">Fourth Link</a></li>
+          <li><a href="">Fifth Link</a></li>
         </ul>
         <div class="copyright">
           <p class="dull-font">
@@ -398,16 +405,16 @@
       </div>
 
       <div class="social-media">
-        <a href="#">
+        <a href="">
           <div class="footericons"><img src="./assets/images/svg/Facebook.svg" alt="facebook-icon" /></div>
         </a>
-        <a href="#">
+        <a href="">
           <div class="footericons"><img src="./assets/images/svg/insta.svg" alt="instagram-icon" /></div>
         </a>
-        <a href="#">
+        <a href="">
           <div class="footericons"><img src="./assets/images/svg/twiter.svg" alt="twiter-icon" /></div>
         </a>
-        <a href="#">
+        <a href="">
           <div class="footericons"><img src="./assets/images/svg/youtube.svg" alt="youtube-icon" /></div>
         </a>
       </div>
