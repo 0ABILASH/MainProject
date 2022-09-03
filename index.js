@@ -337,7 +337,7 @@ fetch('https://fakestoreapi.com/products?desc=sort').then((secondaryData) => {
     </section>`;
   document.getElementById('piechart').innerHTML = piechart;
 
-  slides = ` <section class=" padding">
+  slides = ` <section class="padding">
   <div class="left-rigth-doublequote">
     <img src="./assets/images/svg/🔹 Colorhifen.svg" alt="doublequote" />
   </div>
