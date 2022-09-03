@@ -1,8 +1,10 @@
+// hamburger
+
 var hamburger = document.getElementById("burger");
 let hamburgerNavigation = document.getElementById("burgerNav");
 function burger() {
   hamburgerNavigation.classList.toggle("display-property"),
-  hamburger.classList.toggle("active");
+    hamburger.classList.toggle("active");
 
   let body = document.querySelector("body");
   if (hamburgerNavigation.classList.contains("display-property")) {
@@ -10,6 +12,35 @@ function burger() {
   } else {
     body.style.overflow = "auto";
   }
+}
+
+// carosel
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("slide");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", " ");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
 }
 
 // validation
@@ -50,14 +81,23 @@ function validateConfirmEmail() {
 function freeSubscription() {
   popup.classList.add("open-popup");
   document.getElementById('popuptext').innerHTML = "congratulations!!";
+  document.getElementById('notes').innerHTML = "";
+  document.getElementById('outputname').innerHTML = "";
+  document.getElementById('outputemail').innerHTML = "";
 }
 function prosubscription() {
   popup.classList.add("open-popup");
   document.getElementById('popuptext').innerHTML = "oops!! You need to Pay for pro";
+  document.getElementById('notes').innerHTML = "";
+  document.getElementById('outputname').innerHTML = "";
+  document.getElementById('outputemail').innerHTML = "";
 }
 function Bussinesssubscription() {
   popup.classList.add("open-popup");
   document.getElementById('popuptext').innerHTML = "oops!! You need to Verify |ERROR|";
+  document.getElementById('notes').innerHTML = "";
+  document.getElementById('outputname').innerHTML = "";
+  document.getElementById('outputemail').innerHTML = "";
 }
 
 // localStorage
@@ -151,17 +191,18 @@ fetch('https://fakestoreapi.com/products').then((data) => {
 
 fetch('https://fakestoreapi.com/products?desc=sort').then((secondaryData) => {
   return secondaryData.json();
-}).then((scompletedata) => {
+}).then((completedata) => {
   let headingdata = "";
   let about = "";
   let features = "";
   let piechart = "";
+  let slides = "";
 
   headingdata = `<section class="header-content  max-width">
         <div class="heading">
-          <h1 class="header-font-style">${scompletedata[11].category}</h1>
-          <p class="heading-normal-content heading-font-style">${scompletedata[5].description}</p>
-          <p class="mobile-view-heading heading-font-style">${scompletedata[6].description}</p>
+          <h1 class="header-font-style">${completedata[11].category}</h1>
+          <p class="heading-normal-content heading-font-style">${completedata[5].description}</p>
+          <p class="mobile-view-heading heading-font-style">${completedata[6].description}</p>
           <input type="text" placeholder="Name" autofocus required id="contact-name" onkeyup="validateName()"/><br>
           <input type="email" placeholder="Email" id="contact-email"
           required onkeyup="validateEmail()" /> <br>
@@ -177,10 +218,10 @@ fetch('https://fakestoreapi.com/products?desc=sort').then((secondaryData) => {
         <div class="about">
           <img src="./assets/images/svg/star_bg.svg" alt="starimage" />
           <div class="desktop-about-pragraph padding">
-            <p class="about-font-style">${scompletedata[1].description}</p>
+            <p class="about-font-style">${completedata[1].description}</p>
           </div>
           <div class="mobile-view-about-pragraph">
-            <p class="about-font-style">${scompletedata[1].description}</p>
+            <p class="about-font-style">${completedata[1].description}</p>
           </div>
         </div>
       </section>`;
@@ -194,11 +235,11 @@ fetch('https://fakestoreapi.com/products?desc=sort').then((secondaryData) => {
           </div>
           <div class="desktop-view-one-line-paragraph">
             <p>
-            ${scompletedata[3].description}
+            ${completedata[3].description}
             </p>
           </div>
           <div class="mobile-view-one-line-paragraph">
-            <p>${scompletedata[4].description}</p>
+            <p>${completedata[4].description}</p>
           </div>
         </div>
         <div class="one-line-content-top">
@@ -208,11 +249,11 @@ fetch('https://fakestoreapi.com/products?desc=sort').then((secondaryData) => {
           </div>
           <div class="desktop-view-one-line-paragraph">
             <p>
-            ${scompletedata[5].description}
+            ${completedata[5].description}
             </p>
           </div>
           <div class="mobile-view-one-line-paragraph">
-            <p>${scompletedata[6].description}</p>
+            <p>${completedata[6].description}</p>
           </div>
         </div>
         <div class="one-line-content-top">
@@ -222,11 +263,11 @@ fetch('https://fakestoreapi.com/products?desc=sort').then((secondaryData) => {
           </div>
           <div class="desktop-view-one-line-paragraph">
             <p>
-            ${scompletedata[7].description}
+            ${completedata[7].description}
             </p>
           </div>
           <div class="mobile-view-one-line-paragraph">
-            <p>${scompletedata[8].description}</p>
+            <p>${completedata[8].description}</p>
           </div>
         </div>
       </div>
@@ -247,7 +288,7 @@ fetch('https://fakestoreapi.com/products?desc=sort').then((secondaryData) => {
           </div>
           <div class="dot-precentage1">
             <div class="bold-data presentage-font-style">
-              <h1>${scompletedata[1].id}%</h1>
+              <h1>${completedata[1].id}%</h1>
             </div>
             <div class="lightData">Downloads</div>
           </div>
@@ -258,7 +299,7 @@ fetch('https://fakestoreapi.com/products?desc=sort').then((secondaryData) => {
           </div>
           <div class="dot-precentage1">
             <div class="bold-data presentage-font-style">
-              <h1>${scompletedata[2].id}%</h1>
+              <h1>${completedata[2].id}%</h1>
             </div>
             <div class="light-data">User</div>
           </div>
@@ -269,7 +310,7 @@ fetch('https://fakestoreapi.com/products?desc=sort').then((secondaryData) => {
           </div>
           <div class="dot-precentage1">
             <div class="bold-data presentage-font-style">
-              <h1>${scompletedata[8].id}%</h1>
+              <h1>${completedata[8].id}%</h1>
             </div>
             <div class="light-data">Subscribers</div>
           </div>
@@ -280,21 +321,66 @@ fetch('https://fakestoreapi.com/products?desc=sort').then((secondaryData) => {
           </div>
           <div class="dot-precentage1">
             <div class="bold-data presentage-font-style">
-              <h1>${scompletedata[6].id}%</h1>
+              <h1>${completedata[6].id}%</h1>
             </div>
             <div class="light-data">Products</div>
           </div>
         </div>
       </div>
       <div class="dot-content chart-font-style">
-        <p>${scompletedata[4].description}</p>
+        <p>${completedata[4].description}</p>
 
         <p class="dull-font ">
-        ${scompletedata[11].description}
+        ${completedata[11].description}
         </p>
       </div>
     </section>`;
   document.getElementById('piechart').innerHTML = piechart;
+
+  slides = ` <section class="left-right-container padding">
+  <div class="left-rigth-doublequote">
+    <img src="./assets/images/svg/🔹 Colorhifen.svg" alt="doublequote" />
+  </div>
+  <div class="left-right-content">
+    <button class="circle-button" onclick="plusSlides(-1)"><img src="./assets/images/svg/Iconlft-btn.svg"
+          alt="leftbutton"></button>
+   
+      <div class="slideshow-container">
+      
+     
+      <div class="mySlides">
+       <p>${completedata[6].description}</p>
+      </div>
+      
+      <div class="mySlides">
+        <p>${completedata[11].description}</p>
+      </div>
+      
+      <div class="mySlides">
+        <p>${completedata[8].description}</p>
+      </div>
+      <div class="mySlides">
+        <p>${completedata[2].description}</p>
+      </div>
+      
+      </div>
+      <button class="circle-button" onclick="plusSlides(1)"><img src="./assets/images/svg/Iconrit-btn.svg"
+          alt="rightbutton"></button>
+  </div>
+  <div class="left-right-tags">
+    <h1 class="google secondary-dull-font">Google</h1>
+    <h3>Charlie Mendoza</h3>
+    <p>Product Designer</p>
+    <span> <a href="">Learn more</a></span>
+  </div>
+  <div class="mobile-view-slides">
+    <span class="slide" onclick="currentSlide(1)"></span>
+    <span class="slide" onclick="currentSlide(2)"></span>
+    <span class="slide"onclick="currentSlide(3)"></span>
+    <span class="slide" onclick="currentSlide(4)"></div>
+  </div>
+</section>`;
+  document.getElementById('slides').innerHTML = slides;
 })
 
 // FromJs
