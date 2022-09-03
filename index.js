@@ -2,7 +2,14 @@ var hamburger = document.getElementById("burger");
 let hamburgerNavigation = document.getElementById("burgerNav");
 function burger() {
   hamburgerNavigation.classList.toggle("display-property"),
-    hamburger.classList.toggle("active");
+  hamburger.classList.toggle("active");
+
+  let body = document.querySelector("body");
+  if (hamburgerNavigation.classList.contains("display-property")) {
+    body.style.overflow = "hidden";
+  } else {
+    body.style.overflow = "auto";
+  }
 }
 
 // validation
@@ -40,15 +47,15 @@ function validateConfirmEmail() {
   return true;
 }
 
-function freeSubscription(){
+function freeSubscription() {
   popup.classList.add("open-popup");
   document.getElementById('popuptext').innerHTML = "congratulations!!";
 }
-function prosubscription(){
+function prosubscription() {
   popup.classList.add("open-popup");
   document.getElementById('popuptext').innerHTML = "oops!! You need to Pay for pro";
 }
-function Bussinesssubscription(){
+function Bussinesssubscription() {
   popup.classList.add("open-popup");
   document.getElementById('popuptext').innerHTML = "oops!! You need to Verify |ERROR|";
 }
@@ -69,7 +76,7 @@ function submitted() {
     document.getElementById('popuptext').innerHTML = "Subscribed";
     document.getElementById('notes').innerHTML = "(Note:- Subscribe using the same mailid at the bottom subscrition to fetch data!!)";
   }
-  else{
+  else {
     popup.classList.add("open-popup");
     document.getElementById('notes').innerHTML = "Something Went Wrong";
   }
@@ -103,7 +110,7 @@ fetch('https://fakestoreapi.com/products').then((data) => {
 }).then((completedata) => {
   let short = "";
 
-    short = `<section class=" padding">
+  short = `<section class=" padding">
     <div class="short-heading-container">
       <div class="desktop-view-short-paragraph">
         <h1 class="header-font-style">Short heading</h1>
@@ -142,15 +149,15 @@ fetch('https://fakestoreapi.com/products').then((data) => {
   document.getElementById('short').innerHTML = short;
 })
 
-  fetch('https://fakestoreapi.com/products?desc=sort').then((secondaryData) => {
-    return secondaryData.json();
-  }).then((scompletedata) => {
-    let headingdata = "";
-    let about = "";
-    let features = "";
-    let piechart = "";
-    
-    headingdata = `<section class="header-content  max-width">
+fetch('https://fakestoreapi.com/products?desc=sort').then((secondaryData) => {
+  return secondaryData.json();
+}).then((scompletedata) => {
+  let headingdata = "";
+  let about = "";
+  let features = "";
+  let piechart = "";
+
+  headingdata = `<section class="header-content  max-width">
         <div class="heading">
           <h1 class="header-font-style">${scompletedata[11].category}</h1>
           <p class="heading-normal-content heading-font-style">${scompletedata[5].description}</p>
@@ -165,8 +172,8 @@ fetch('https://fakestoreapi.com/products').then((data) => {
           <img src="./assets/images/svg/Vectorscreen.svg" alt="screenimage" />
         </div>
       </section>`;
-    document.getElementById('heading').innerHTML = headingdata;
-    about = ` <section class="about-content padding">
+  document.getElementById('heading').innerHTML = headingdata;
+  about = ` <section class="about-content padding">
         <div class="about">
           <img src="./assets/images/svg/star_bg.svg" alt="starimage" />
           <div class="desktop-about-pragraph padding">
@@ -177,8 +184,8 @@ fetch('https://fakestoreapi.com/products').then((data) => {
           </div>
         </div>
       </section>`;
-    document.getElementById('about').innerHTML = about;
-    features = `<section class="one-line-container padding">
+  document.getElementById('about').innerHTML = about;
+  features = `<section class="one-line-container padding">
       <div>
         <div class="one-line-content-top">
           <div class="one-line-content">
@@ -228,8 +235,8 @@ fetch('https://fakestoreapi.com/products').then((data) => {
         <img src="./assets/images/svg/Imagebg.svg" alt="ImageScreen" />
       </div>
     </section>`;
-    document.getElementById('features').innerHTML = features;
-    piechart = `<section class="chart-container padding">
+  document.getElementById('features').innerHTML = features;
+  piechart = `<section class="chart-container padding">
       <div class="big-chart">
         <img src="./assets/images/svg/Bigchart.svg" alt="piechart" />
       </div>
@@ -287,8 +294,8 @@ fetch('https://fakestoreapi.com/products').then((data) => {
         </p>
       </div>
     </section>`;
-    document.getElementById('piechart').innerHTML = piechart;
-  })
+  document.getElementById('piechart').innerHTML = piechart;
+})
 
 // FromJs
 
